@@ -1,0 +1,71 @@
+# -*- coding:utf-8 -*-
+# @Time : 2024-11-23 16:30
+# @Author : 沈东杨
+# @Email : shendongyang844@gmail.com
+
+#need_captcha：是否需要正确的code和sn
+- casename: 登录
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    sn: null
+    code: null
+    need_captcha: true
+    nature: true
+
+- casename: 登录
+  data:
+    login_username: 1000@xiaotao
+    login_password: 123456
+    sn: null
+    code: null
+    need_captcha: true
+    nature: true
+
+- casename: 登录
+  data:
+    login_username: 1000@admin
+    login_password: 123456
+    sn: null
+    code: null
+    need_captcha: true
+
+- casename: 登录
+  data:
+    login_username: 1000@xiaotao
+    login_password: 000000
+    sn: null
+    code: null
+    need_captcha: true
+
+- casename: 登录
+  data:
+    login_username: 1000@xiaotao
+    login_password: 123456
+    sn: null
+    code: null
+    need_captcha: false
+
+- casename: 登录
+  data:
+    login_username: null
+    login_password: 123456
+    sn: null
+    code: null
+    need_captcha: true
+
+- casename: 登录
+  data:
+    login_username: 1000@xiaotao
+    login_password: null
+    sn: null
+    code: null
+    need_captcha: true
+
+- casename: 登录
+  data:
+    login_username: 1000@xiaotao
+    login_password: 123456
+    sn: dasad
+    code: da21
+    need_captcha: false

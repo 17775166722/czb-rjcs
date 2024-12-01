@@ -1,0 +1,199 @@
+# -*- coding:utf-8 -*-
+# @Time : 2024-11-28 18:55
+# @Author : 沈东杨
+# @Email : shendongyang844@gmail.com
+
+#scId:仓库id  supplierId:供应商id  purchaserId:采购员id  expectArriveDate:预计到货时间  payTypes:付款类型  payAmount:付款总金额  products:出库商品
+
+#正确数据
+- casename: 采购订单
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    scId: 1859802908804124672
+    supplierId: 1861103558770954240
+    purchaserId: 1
+    expectArriveDate: "2024-12-28"
+    payTypes:
+      - id: 2
+        payAmount: 264
+        text: 测试
+    products:
+      - productId: 1861727812411592705
+        purchasePrice: 11
+        purchaseNum: 12
+        description: 测试
+      - productId: 1861727050776317952
+        purchasePrice: 11
+        purchaseNum: 12
+        description: 测试
+    is_true: True
+#
+#权限不足
+- casename: 采购订单
+  data:
+    login_username: 1000@xiaotao
+    login_password: 123456
+    scId: 1859802908804124672
+    supplierId: 1861103558770954240
+    purchaserId: 1
+    expectArriveDate: "2024-12-28"
+    payTypes:
+      - id: 2
+        payAmount: 264
+        text: 测试
+    products:
+      - productId: 1861727812411592705
+        purchasePrice: 11
+        purchaseNum: 12
+      - productId: 1861727050776317952
+        purchasePrice: 11
+        purchaseNum: 12
+    is_low: True
+
+
+#仓库不存在
+- casename: 采购订单
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    scId: 18598022565365124672
+    supplierId: 1861103558770954240
+    purchaserId: 1
+    expectArriveDate: "2024-12-28"
+    payTypes:
+      - id: 2
+        payAmount: 264
+    products:
+      - productId: 1861727812411592705
+        purchasePrice: 11
+        purchaseNum: 12
+      - productId: 1861727050776317952
+        purchasePrice: 11
+        purchaseNum: 12
+    
+
+#供应商不存在
+- casename: 采购订单
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    scId: 1859802908804124672
+    supplierId: 18615689769370954240
+    purchaserId: 1
+    expectArriveDate: "2024-12-28"
+    payTypes:
+      - id: 2
+        payAmount: 264
+    products:
+      - productId: 1861727812411592705
+        purchasePrice: 11
+        purchaseNum: 12
+      - productId: 1861727050776317952
+        purchasePrice: 11
+        purchaseNum: 12
+    
+
+#采购员不存在
+- casename: 采购订单
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    scId: 1859802908804124672
+    supplierId: 1861103558770954240
+    purchaserId: 8756876578765
+    expectArriveDate: "2024-12-28"
+    payTypes:
+      - id: 2
+        payAmount: 264
+    products:
+      - productId: 1861727812411592705
+        purchasePrice: 11
+        purchaseNum: 12
+      - productId: 1861727050776317952
+        purchasePrice: 11
+        purchaseNum: 12
+    
+
+#日期格式不正确
+- casename: 采购订单
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    scId: 1859802908804124672
+    supplierId: 1861103558770954240
+    purchaserId: 1
+    expectArriveDate: "2024/12/28 15:30"
+    payTypes:
+      - id: 2
+        payAmount: 264
+    products:
+      - productId: 1861727812411592705
+        purchasePrice: 11
+        purchaseNum: 12
+      - productId: 1861727050776317952
+        purchasePrice: 11
+        purchaseNum: 12
+    
+
+#支付方式不存在
+- casename: 采购订单
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    scId: 1859802908804124672
+    supplierId: 1861103558770954240
+    purchaserId: 485456
+    expectArriveDate: "2024-12-28"
+    payTypes:
+      - id: 2
+        payAmount: 264
+    products:
+      - productId: 1861727812411592705
+        purchasePrice: 11
+        purchaseNum: 12
+      - productId: 1861727050776317952
+        purchasePrice: 11
+        purchaseNum: 12
+    
+
+#支付金额不足
+- casename: 采购订单
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    scId: 1859802908804124672
+    supplierId: 1861103558770954240
+    purchaserId: 1
+    expectArriveDate: "2024-12-28"
+    payTypes:
+      - id: 2
+        payAmount: 5
+    products:
+      - productId: 1861727812411592705
+        purchasePrice: 11
+        purchaseNum: 12
+      - productId: 1861727050776317952
+        purchasePrice: 11
+        purchaseNum: 12
+    
+
+#商品id不存在
+- casename: 采购订单
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    scId: 1859802908804124672
+    supplierId: 1861103558770954240
+    purchaserId: 1
+    expectArriveDate: "2024-12-28"
+    payTypes:
+      - id: 2
+        payAmount: 264
+    products:
+      - productId: 1861728668565411592705
+        purchasePrice: 11
+        purchaseNum: 12
+      - productId: 1861727050776317952
+        purchasePrice: 11
+        purchaseNum: 12

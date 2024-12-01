@@ -1,0 +1,149 @@
+# -*- coding:utf-8 -*-
+# @Time : 2024-11-24 15:40
+# @Author : 沈东杨
+# @Email : shendongyang844@gmail.com
+
+#gender 0：未知性别 1：男 2：女
+#deptIds 1：销售中心 2：研发中心 3：销售部 4：研发部
+#roleIds 1：系统管理员  1860626146396344320：员工  1860674930505551872：员工2  1860674554976931840：测试人员 ..........
+
+#正确数据
+- casename: 用户新增
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    code: null
+    deptIds: [2]
+    description: null
+    name: 小红
+    email: 12313@qq.com
+    gender: 0
+    password: 123456
+    roleIds: [1860618314561228800]
+    telephone: 13877777777
+    username: null
+    is_true: true
+
+#缺失姓名
+- casename: 用户新增
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    code: null
+    deptIds: [3]
+    description: null
+    name: null
+    email: 12313@qq.com
+    gender: 0
+    password: 123456
+    roleIds: [1860674554976931840]
+    telephone: 13877777777
+    username: null
+#缺失用户名
+- casename: 用户新增
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    code: null
+    deptIds: [3]
+    description: null
+    name: 小兰
+    email: 12313@qq.com
+    gender: 0
+    password: 123456
+    roleIds: [1860674554976931840]
+    telephone: 13877777777
+    username: null
+    not_username: true
+#缺失部门
+- casename: 用户新增
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    code: null
+    deptIds: null
+    description: null
+    name: 小白
+    email: 12313@qq.com
+    gender: 0
+    password: 123456
+    roleIds: [1860674554976931840]
+    telephone: 13877777777
+    username: null
+    is_true: true
+#缺失角色
+- casename: 用户新增
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    code: null
+    deptIds: [3]
+    description: null
+    name: 小白
+    email: 12313@qq.com
+    gender: 0
+    password: 123456
+    roleIds: null
+    telephone: 13877777777
+    username: null
+    is_true: true
+#缺失密码
+- casename: 用户新增
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    code: null
+    deptIds: [3]
+    description: null
+    name: 小白
+    email: 12313@qq.com
+    gender: 0
+    password: null
+    roleIds: [1860674554976931840]
+    telephone: 13877777777
+    username: null
+#缺失性别
+- casename: 用户新增
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    code: null
+    deptIds: null
+    description: null
+    name: 小白
+    email: 12313@qq.com
+    gender: null
+    password: 123456
+    roleIds: [1860674554976931840]
+    telephone: 13877777777
+    username: null
+#输入非法手机号
+- casename: 用户新增
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    code: null
+    deptIds: [3]
+    description: null
+    name: 小白
+    email: 12313@qq.com
+    gender: 0
+    password: 123456
+    roleIds: [1860674554976931840]
+    telephone: 12877777777
+    username: null
+#输入非法密码
+- casename: 用户新增
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    code: null
+    deptIds: [3]
+    description: null
+    name: 小白
+    email: 12313@qq.com
+    gender: 0
+    password: 1！#as
+    roleIds: [1860674554976931840]
+    telephone: 13877777777
+    username: null

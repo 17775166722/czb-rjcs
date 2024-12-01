@@ -1,0 +1,74 @@
+# -*- coding:utf-8 -*-
+# @Time : 2024-11-24 14:48
+# @Author : 沈东杨
+# @Email : shendongyang844@gmail.com
+
+#正确数据
+- casename: 角色新增
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    code: null
+    permission: null
+    description: null
+    name: null
+    shortName: null
+    is_random: true
+    is_true: true
+#检验无访问权限
+- casename: 角色新增
+  data:
+    login_username: 1000@xiaotao
+    login_password: 123456
+    code: null
+    permission: null
+    description: null
+    name: null
+    shortName: null
+    is_random: true
+    not_authority: true
+#验证重复信息
+- casename: 角色新增
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    code: 001
+    permission: null
+    description: null
+    name: 测试001
+    shortName: null
+    is_random: false
+#验证code参数正则校验
+- casename: 角色新增
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    code: 啊恒大江湾
+    permission: null
+    description: null
+    name: 员工6
+    shortName: null
+    is_random: false
+#姓名为空
+- casename: 角色新增
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    code: 006
+    permission: null
+    description: null
+    name: null
+    shortName: null
+    is_random: false
+#验证所有数据输入是否正常
+- casename: 角色新增
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    code: null
+    permission: 大武当
+    description: 销售部
+    name: null
+    shortName: 小琪
+    is_random: true
+    is_true: true

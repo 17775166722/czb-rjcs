@@ -1,0 +1,225 @@
+# -*- coding:utf-8 -*-
+# @Time : 2024-11-28 15:54
+# @Author : 沈东杨
+# @Email : shendongyang844@gmail.com
+
+#scId:仓库id memberId:会员id salerId:销售员id paymentDate:付款时间 payTypes:付款类型 payAmount:付款总金额 products:出库商品
+
+#正确数据
+- casename: 零售出库
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    scId: 1859802908804124672
+    memberId: 1859800952677208064
+    salerId: 1
+    paymentDate: "2024-12-28"
+    payTypes:
+      - id: 2
+        payAmount: 30
+    products:
+      - productId: 1861727812411592705
+        oriPrice: 15
+        taxPrice: 15
+        discountRate: 100.00
+        orderNum: 1
+      - productId: 1861727050776317952
+        oriPrice: 15
+        taxPrice: 15
+        discountRate: 100.00
+        orderNum: 1
+    is_true: True
+
+#权限不足
+- casename: 零售出库
+  data:
+    login_username: 1000@xiaotao
+    login_password: 123456
+    scId: 1859802908804124672
+    memberId: 1859800952677208064
+    salerId: 1860886906632540160
+    paymentDate: "2024-12-28"
+    payTypes:
+      - id: 2
+        payAmount: 30
+    products:
+      - productId: 1861727812411592705
+        oriPrice: 15
+        taxPrice: 15
+        discountRate: 100.00
+        orderNum: 1
+      - productId: 1861727050776317952
+        oriPrice: 15
+        taxPrice: 15
+        discountRate: 100.00
+        orderNum: 1
+    is_low: True
+
+#库存不足的仓库
+- casename: 零售出库
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    scId: 1860886906632540160
+    memberId: 1859800952677208064
+    salerId: 1
+    paymentDate: "2024-12-28"
+    payTypes:
+      - id: 2
+        payAmount: 30
+    products:
+      - productId: 1861727812411592705
+        oriPrice: 15
+        taxPrice: 15
+        discountRate: 100.00
+        orderNum: 1
+      - productId: 1861727050776317952
+        oriPrice: 15
+        taxPrice: 15
+        discountRate: 100.00
+        orderNum: 1
+    is_enable: True
+
+#不存在的会员
+- casename: 零售出库
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    scId: 1859802908804124672
+    memberId: 5599954646464
+    salerId: 1
+    paymentDate: "2024-12-28"
+    payTypes:
+      - id: 2
+        payAmount: 30
+    products:
+      - productId: 1861727812411592705
+        oriPrice: 15
+        taxPrice: 15
+        discountRate: 100.00
+        orderNum: 1
+      - productId: 1861727050776317952
+        oriPrice: 15
+        taxPrice: 15
+        discountRate: 100.00
+        orderNum: 1
+
+#不存在的销售员
+- casename: 零售出库
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    scId: 1859802908804124672
+    memberId: 1859800952677208064
+    salerId: 4594984897894562
+    paymentDate: "2024-12-28"
+    payTypes:
+      - id: 2
+        payAmount: 30
+    products:
+      - productId: 1861727812411592705
+        oriPrice: 15
+        taxPrice: 15
+        discountRate: 100.00
+        orderNum: 1
+      - productId: 1861727050776317952
+        oriPrice: 15
+        taxPrice: 15
+        discountRate: 100.00
+        orderNum: 1
+
+#错误的日期格式
+- casename: 零售出库
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    scId: 1859802908804124672
+    memberId: 1859800952677208064
+    salerId: 1
+    paymentDate: "2024/12/28 15:30"
+    payTypes:
+      - id: 2
+        payAmount: 30
+    products:
+      - productId: 1861727812411592705
+        oriPrice: 15
+        taxPrice: 15
+        discountRate: 100.00
+        orderNum: 1
+      - productId: 1861727050776317952
+        oriPrice: 15
+        taxPrice: 15
+        discountRate: 100.00
+        orderNum: 1
+
+#支付金额不足
+- casename: 零售出库
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    scId: 1859802908804124672
+    memberId: 1859800952677208064
+    salerId: 1
+    paymentDate: "2024-12-28"
+    payTypes:
+      - id: 2
+        payAmount: 1
+    products:
+      - productId: 1861727812411592705
+        oriPrice: 15
+        taxPrice: 15
+        discountRate: 100.00
+        orderNum: 1
+      - productId: 1861727050776317952
+        oriPrice: 15
+        taxPrice: 15
+        discountRate: 100.00
+        orderNum: 1
+
+#支付方式不存在
+- casename: 零售出库
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    scId: 1859802908804124672
+    memberId: 1859800952677208064
+    salerId: 1
+    paymentDate: "2024-12-28"
+    payTypes:
+      - id: 165
+        payAmount: 30
+    products:
+      - productId: 1861727812411592705
+        oriPrice: 15
+        taxPrice: 15
+        discountRate: 100.00
+        orderNum: 1
+      - productId: 1861727050776317952
+        oriPrice: 15
+        taxPrice: 15
+        discountRate: 100.00
+        orderNum: 1
+
+#不存在的商品
+- casename: 零售出库
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    scId: 1859802908804124672
+    memberId: 1859800952677208064
+    salerId: 1
+    paymentDate: "2024-12-28"
+    payTypes:
+      - id: 2
+        payAmount: 30
+    products:
+      - productId: 85949544151561654
+        oriPrice: 15
+        taxPrice: 15
+        discountRate: 100.00
+        orderNum: 1
+      - productId: 1861727050776317952
+        oriPrice: 15
+        taxPrice: 15
+        discountRate: 100.00
+        orderNum: 1

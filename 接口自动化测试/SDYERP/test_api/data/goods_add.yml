@@ -1,0 +1,305 @@
+# -*- coding:utf-8 -*-
+# @Time : 2024-11-28 08:40
+# @Author : 沈东杨
+# @Email : shendongyang844@gmail.com
+
+#taxRate:进口税率 saleTaxRate:售卖税率 purchasePrice：采购价 salePrice:销售价 retailPrice：零售价
+
+#正确数据
+- casename: 商品新增
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    code: ""
+    name: 测试测试测试
+    skucode: ""
+    categoryId: 1859799552488509440
+    brandId: 1861014997560332288
+    weight: 123
+    volume: 123
+    taxRate: 2
+    saleTaxRate: 1
+    purchasePrice: 152
+    salePrice: 122
+    retailPrice: 133
+    productType: 1
+    is_random_code: true
+    is_random_sku: true
+    is_true: true
+
+#权限不足
+- casename: 商品新增
+  data:
+    login_username: 1000@xiaotao
+    login_password: 123456
+    code: ""
+    name: 测试测试测试
+    skucode: ""
+    categoryId: 1859799552488509440
+    brandId: 1861014997560332288
+    weight: 123
+    volume: 123
+    taxRate: 2
+    saleTaxRate: 1
+    purchasePrice: 152
+    salePrice: 122
+    retailPrice: 133
+    productType: 1
+    is_random_code: true
+    is_random_sku: true
+    is_low: ture
+
+#缺少code
+- casename: 商品新增
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    code: ""
+    name: 测试测试测试
+    skuCode: ""
+    categoryId: 1859799552488509440
+    brandId: 1861014997560332288
+    weight: 123
+    volume: 123
+    taxRate: 2
+    saleTaxRate: 1
+    purchasePrice: 152
+    salePrice: 122
+    retailPrice: 133
+    productType: 1
+    is_random_code: false
+    is_random_sku: true
+
+#sku缺失
+- casename: 商品新增
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    code: ""
+    name: 测试测试测试
+    skucode: ""
+    categoryId: 1859799552488509440
+    brandId: 1861014997560332288
+    weight: 123
+    volume: 123
+    taxRate: 2
+    saleTaxRate: 1
+    purchasePrice: 152
+    salePrice: 122
+    retailPrice: 133
+    productType: 1
+    is_random_code: true
+    is_random_sku: false
+
+#重复sku
+- casename: 商品新增
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    code: ""
+    name: 测试测试测试
+    skuCode: 2343541563
+    categoryId: 1859799552488509440
+    brandId: 1861014997560332288
+    weight: 123
+    volume: 123
+    taxRate: 2
+    saleTaxRate: 1
+    purchasePrice: 152
+    salePrice: 122
+    retailPrice: 133
+    productType: 1
+    is_random_code: true
+    is_random_sku: false
+
+
+#weight非法格式(中文字符)
+- casename: 商品新增
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    code: ""
+    name: 测试测试测试
+    skucode: ""
+    categoryId: 1859799552488509440
+    brandId: 1861014997560332288
+    weight: 大武
+    volume: 123
+    taxRate: 2
+    saleTaxRate: 1
+    purchasePrice: 152
+    salePrice: 122
+    retailPrice: 133
+    productType: 1
+    is_random_code: true
+    is_random_sku: true
+
+#volume非法格式(中文字符)
+- casename: 商品新增
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    code: ""
+    name: 测试测试测试
+    skucode: ""
+    categoryId: 1859799552488509440
+    brandId: 1861014997560332288
+    weight: 123
+    volume: 大武当
+    taxRate: 2
+    saleTaxRate: 1
+    purchasePrice: 152
+    salePrice: 122
+    retailPrice: 133
+    productType: 1
+    is_random_code: true
+    is_random_sku: true
+
+#taxRate非法格式(中文字符)
+- casename: 商品新增
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    code: ""
+    name: 测试测试测试
+    skucode: ""
+    categoryId: 1859799552488509440
+    brandId: 1861014997560332288
+    weight: 123
+    volume: 123
+    taxRate: 大武
+    saleTaxRate: 1
+    purchasePrice: 152
+    salePrice: 122
+    retailPrice: 133
+    productType: 1
+    is_random_code: true
+    is_random_sku: true
+
+#saleTaxRate非法格式(中文字符)
+- casename: 商品新增
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    code: ""
+    name: 测试测试测试
+    skucode: ""
+    categoryId: 1859799552488509440
+    brandId: 1861014997560332288
+    weight: 123
+    volume: 123
+    taxRate: 1
+    saleTaxRate: 1
+    purchasePrice: 152
+    salePrice: 大武
+    retailPrice: 133
+    productType: 1
+    is_random_code: true
+    is_random_sku: true
+
+#purchasePrice非法格式(中文字符)
+- casename: 商品新增
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    code: ""
+    name: 测试测试测试
+    skucode: ""
+    categoryId: 1859799552488509440
+    brandId: 1861014997560332288
+    weight: 123
+    volume: 123
+    taxRate: 1
+    saleTaxRate: 1
+    purchasePrice: 测试
+    salePrice: 111
+    retailPrice: 133
+    productType: 1
+    is_random_code: true
+    is_random_sku: true
+
+#retailPrice非法格式(中文字符)
+- casename: 商品新增
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    code: ""
+    name: 测试测试测试
+    skucode: ""
+    categoryId: 1859799552488509440
+    brandId: 1861014997560332288
+    weight: 123
+    volume: 123
+    taxRate: 1
+    saleTaxRate: 1
+    purchasePrice: 110
+    salePrice: 111
+    retailPrice: 测试
+    productType: 1
+    is_random_code: true
+    is_random_sku: true
+
+#weight非法格式(三位小数)
+- casename: 商品新增
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    code: ""
+    name: 测试测试测试
+    skucode: ""
+    categoryId: 1859799552488509440
+    brandId: 1861014997560332288
+    weight: 12.235
+    volume: 123
+    taxRate: 2
+    saleTaxRate: 1
+    purchasePrice: 152
+    salePrice: 122
+    retailPrice: 133
+    productType: 1
+    is_random_code: true
+    is_random_sku: true
+
+#volume非法格式(三位小数)
+- casename: 商品新增
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    code: ""
+    name: 测试测试测试
+    skucode: ""
+    categoryId: 1859799552488509440
+    brandId: 1861014997560332288
+    weight: 123
+    volume: 123.235
+    taxRate: 2
+    saleTaxRate: 1
+    purchasePrice: 152
+    salePrice: 122
+    retailPrice: 133
+    productType: 1
+    is_random_code: true
+    is_random_sku: true
+
+#taxRate非法格式(小数)
+- casename: 商品新增
+  data:
+    login_username: 1000@superadmin
+    login_password: 123456
+    code: ""
+    name: 测试测试测试
+    skucode: ""
+    categoryId: 1859799552488509440
+    brandId: 1861014997560332288
+    weight: 123
+    volume: 123
+    taxRate: 12.2
+    saleTaxRate: 1
+    purchasePrice: 152
+    salePrice: 122
+    retailPrice: 133
+    productType: 1
+    is_random_code: true
+    is_random_sku: true
+
+
